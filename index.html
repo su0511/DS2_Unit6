@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Echo: Archive 2000s</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <div class="desktop-icon" style="top: 20px; left: 20px;" onclick="openWindow('About')">
+        <img src="assets/icons01.png" alt="About">
+        About
+      </div>
+      <div class="desktop-icon" style="top: 120px; left: 20px;" onclick="openWindow('mall')">
+        <img src="assets/icons02.png" alt="Mall">
+        Mall
+      </div>
+      <div class="desktop-icon" style="top: 220px; left: 20px;" onclick="openWindow('school')">
+        <img src="assets/icons03.png" alt="School">
+        School
+      </div>
+      <div class="desktop-icon" style="top: 320px; left: 20px;" onclick="openWindow('street')">
+        <img src="assets/icons04.png" alt="Street">
+        Street
+      </div>
+      <div class="desktop-icon" style="top: 20px; left: 120px;" onclick="openWindow('park')">
+        <img src="assets/icons05.png" alt="Park">
+        Park
+      </div>
+      <div class="desktop-icon" style="top: 120px; left: 120px;" onclick="openWindow('home')">
+        <img src="assets/icons06.png" alt="Home">
+        Home
+      </div>
+      <div class="desktop-icon" style="top: 220px; left: 120px;" onclick="openWindow('transportation')">
+        <img src="assets/icons07.png" alt="Transportation">
+        Transportation
+      </div>
+
+      <div class="desktop-icon" style="top: 320px; left: 120px;" onclick="openMemoryWall()">
+        <img src="assets/icons08.png" alt="MemoryWall">
+        Memories
+      </div>
+
+      <div id="memory-window" class="window" style="display: none; top: 100px; left: 200px;">
+        <div class="title-bar">
+          <span>Memory Wall</span>
+          <button onclick="closeWindow('memory')">X</button>
+        </div>
+        <div id="About-stage-1" class="stage-content active">
+          <p><b>All Saved Memories:</b></p>
+          <ul id="memoryList" style="list-style-type: none; padding-left: 0;"></ul>
+        </div>
+      </div>
+
+      <div id="welcome-popup" class="window" style="width: 400px; top: 30%; left: 50%; transform: translateX(-50%); z-index: 9999;">
+        <div class="title-bar">
+          <span>Welcome Back</span>
+        </div>
+        <div style="padding: 20px;">
+          <p><i>POV: You just double-clicked on a memory folder from the 2000s.</i></p>
+          <p><i>Welcome back to Generation Z!!</i></p>
+          <br>       
+          <img src="assets/star.gif" width="350">
+            <p>System prompt: Loading memory...</p>
+             <button onclick="closeWelcomePopup()">Enter</button>
+        </div>
+      </div>
+
+      <div id="About-window" class="window">
+        <div class="title-bar">
+          <span>Introduction</span>
+          <button onclick="closeWindow('About')">X</button>
+        </div>
+      <div id="About-stage-1" class="stage-content active">
+        <p><i>This project is a personal archive of disappearing urban memories between 2000 and 2010, traced through the fading soundscapes and visuals of my hometown — Chengdu. Using real family photos, ambient recordings, and street fragments, I reassemble the mundane beauty of local life that once defined my daily rhythm.
+            <br>
+            <br>
+            From malls to schoolyards, parks to public transport, each section preserves a corner of globalized standardization of modern life. This site is not a critique, but a very gentle and soft act of remembering. 
+            <br>
+            <br>
+            In an age when even memory is outsourced to data, City Echo asks: can we still hear the city that raised us?
+      </div>
+    </div>
+
+  
+  <div id="mall-window" class="window">
+    <div class="title-bar">
+      <span>Mall</span>
+      <button onclick="closeWindow('mall')">X</button>
+    </div>
+    <div class="stage-buttons">
+      <button onclick="showStage('mall', 1)" class="active">Ambience</button>
+      <button onclick="showStage('mall', 2)">Impression</button>
+      <button onclick="showStage('mall', 3)">Memory</button>
+      <button onclick="showStage('mall', 4)">Fragment</button>
+    </div>
+    <div id="mall-stage-1" class="stage-content active">
+      <p><i>Close your eyes. Do you remember which store was the brightest?</i></p>
+      <audio controls preload="none">
+      <source src="assets/mall-ambience.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+    <div id="mall-stage-2" class="stage-content">
+      <p><i>Before the city renovation, red taxis danced like candies on Luoma Market street. 
+      <br>I remember the sky was always blue, and the street filled with buzzing sounds.</i></p>
+      <img data-src="assets/mall-impression.gif" width="400" class="lazy-img">
+    </div>
+    <div id="mall-stage-3" class="stage-content">
+      <p><i>August 2028</i></p>
+      <p><i>My sister always took me on that spinning kiddie ride in the mall. We wobbled inside while a loud, funny tune played. That corner is now a Starbucks.</i></p>
+      <img data-src="assets/mall.jpg" width="400" class="lazy-img">
+    </div>
+    <div id="mall-stage-4" class="stage-content">
+      <p><i>Who decides when a city's memory gets retired? Spaces once built for kids have been replaced by algorithm-driven storefronts. Even corners meant for fun no longer exist. <br> Can we still have the right to choose nostalgia?</i></p>
+      <hr>
+      <br>
+      <p><i>Leave your own memory here—anything you recall from this place: a thought, a feeling, a smell, a scene.</i></p>
+      <textarea placeholder="Leave your memory here" rows="4" style="width: 90%; margin-top: 10px;"></textarea> 
+      <button onclick="saveComment('mall')">Submit</button>
+
+
+    </div>
+  </div>
+
+  
+  <div id="school-window" class="window">
+    <div class="title-bar">
+      <span>School</span>
+      <button onclick="closeWindow('school')">X</button>
+    </div>
+    <div class="stage-buttons">
+      <button onclick="showStage('school', 1)" class="active">Ambience</button>
+      <button onclick="showStage('school', 2)">Impression</button>
+      <button onclick="showStage('school', 3)">Memory</button>
+      <button onclick="showStage('school', 4)">Fragment</button>
+    </div>
+    <div id="school-stage-1" class="stage-content active">
+      <p><i>Close your eyes. Can you return to the class just by listening?</i></p>
+      <audio controls preload="none">
+      <source src="assets/school-ambience.wav" type="audio/mpeg">
+      </audio>
+    </div>
+    <div id="school-stage-2" class="stage-content">
+      <p><i>Before online learning became the norm, we sat quietly under the glowing classroom TV. In the back, someone sipped warm milk while the old water dispenser hummed in the corner.</i></p>
+      <img data-src="assets/school-impression.gif" width="400" class="lazy-img">
+    </div>
+    <div id="school-stage-3" class="stage-content">
+        <p><i>October 2028</i></p>
+        <p><i>Back then in kindergarten, the red plaid uniforms, the morning broadcast — they all blend into a hazy but vivid childhood memory. Now, those sounds and scenes are slowly vanishing, living only in old photos.</i></p>
+      <img data-src="assets/school.jpg" width="400" class="lazy-img">
+      </div>
+    <div id="school-stage-4" class="stage-content">
+        <p><i>Who decides when childhood sounds become irrelevant? The bell that once rang across the playground is now just a muted file in someone’s archive.
+            We used to chant texts aloud, chasing the rising sun within school bags.
+            But the rhythm is gone.
+            <br>Did we forget it, or were we told to?  
+        <hr>
+        <br>
+        <p><i>Leave your own memory here—anything you recall from this place: a thought, a feeling, a smell, a scene.</i></p>
+        <textarea placeholder="Leave your memory here" rows="4" style="width: 90%; margin-top: 10px;"></textarea> 
+        <button onclick="saveComment('school')">Submit</button>
+
+    </div>
+  </div>
+
+ 
+<div id="street-window" class="window">
+    <div class="title-bar">
+      <span>Street</span>
+      <button onclick="closeWindow('street')">X</button>
+    </div>
+    <div class="stage-buttons">
+      <button onclick="showStage('street', 1)" class="active">Ambience</button>
+      <button onclick="showStage('street', 2)">Impression</button>
+      <button onclick="showStage('street', 3)">Memory</button>
+      <button onclick="showStage('street', 4)">Fragment</button>
+    </div>
+    <div id="street-stage-1" class="stage-content active">
+      <p><i>Close your eyes. The sound of a bike bell—are you back at that old intersection?</i></p>
+      <audio controls preload="none"><source src="assets/street-ambience.wav" type="audio/mpeg"></audio>
+    </div>
+    <div id="street-stage-2" class="stage-content">
+      <p><i>I still remembers the heat of noon at the street crossing. Motorbikes buzzed like insects, plastic umbrellas bloomed above the heads. Noise, smell, and sweat — these were once the rhythms of a city.</i></p>
+      <img data-src="assets/street-impression.gif" width="400" class="lazy-img">
+    </div>
+    <div id="street-stage-3" class="stage-content">
+      <p><i>June 2027</i></p>
+      <p><i>My dad lifted me up high by the pond, and we both turned toward the sound of a motorcycle rushing past. That brief second, the hum of engines, sun on the water, my tiny sandals swinging — became a still frame in my memory. Now, the street feels quieter, not because the noise is gone, but because we've grown apart from it. </i></p>
+      <video width="400" controls data-src="assets/street.mp4"  type="video/mp4"  class="lazy-video">
+      </video>
+    
+    </div>
+    <div id="street-stage-4" class="stage-content">
+        Who decides when street noise stops mattering?
+        The bike bells, vendor shouts, cassette tunes once filled the alleys like heartbeat. Now they’re replaced with polished glass and soft pop music.
+        <br>Did the city change, or did we let it be changed?
+    <hr>
+    <br>
+    <p><i>Leave your own memory here—anything you recall from this place: a thought, a feeling, a smell, a scene.</i></p>
+      <textarea placeholder="Leave your memory here" rows="4" style="width: 90%; margin-top: 10px;"></textarea> 
+      <button onclick="saveComment('street')">Submit</button>
+
+    </div>
+</div>
+
+  
+  <div id="park-window" class="window">
+    <div class="title-bar">
+      <span>Park</span>
+      <button onclick="closeWindow('park')">X</button>
+    </div>
+    <div class="stage-buttons">
+      <button onclick="showStage('park', 1)" class="active">Ambience</button>
+      <button onclick="showStage('park', 2)">Impression</button>
+      <button onclick="showStage('park', 3)">Memory</button>
+      <button onclick="showStage('park', 4)">Fragment</button>
+    </div>
+    <div id="park-stage-1" class="stage-content active">
+      <p><i>Close your eyes. Can the crunch of an apple bring you back to the park bench?</i></p>
+      <audio controls preload="none"><source src="assets/park-ambience.wav" type="audio/mpeg"></audio>
+    </div>
+    <div id="park-stage-2" class="stage-content">
+      <p><i>Before playgrounds became gated zones or vanished into blueprints, we chased shadows and splashed water with bare feet. Someone’s grandma peeled fruit on a bench, and laughter echoed between trees.</i></p>
+      <img data-src="assets/park-impression.gif" width="400" class="lazy-img">
+    </div>
+    <div id="park-stage-3" class="stage-content">
+      <p><i>April 2009</i></p>
+      <p><i>Back then in the park, the willow crowns, muddy puddles, and unfinished towers all shimmered with sunlight and laughter. It wasn’t beautiful in the usual way, but it was ours. Now, those colors and corners only survive in blurry photo prints.</i></p>
+      <img data-src="assets/park.jpg" width="400" class="lazy-img">
+    </div>
+    <div id="park-stage-4" class="stage-content">
+        Who decides when puddles and pebble trails become obsolete?
+        The squeals of barefoot kids, the clatter of plastic basins, the hum of cicadas once filled the park like a summer symphony. Now, those textures are flattened by fitness tracks and corporate signage.
+        <br>Did the park grow up, or did we forget how to play?
+    <hr>
+    <br>
+    <p><i>Leave your own memory here—anything you recall from this place: a thought, a feeling, a smell, a scene.</i></p>
+      <textarea placeholder="Leave your memory here" rows="4" style="width: 90%; margin-top: 10px;"></textarea>
+      <button onclick="saveComment('park')">Submit</button>
+
+    </div>
+  </div>
+
+  
+  <div id="home-window" class="window">
+    <div class="title-bar">
+      <span>Home</span>
+      <button onclick="closeWindow('home')">X</button>
+    </div>
+    <div class="stage-buttons">
+      <button onclick="showStage('home', 1)" class="active">Ambience</button>
+      <button onclick="showStage('home', 2)">Impression</button>
+      <button onclick="showStage('home', 3)">Memory</button>
+      <button onclick="showStage('home', 4)">Fragment</button>
+    </div>
+    <div id="home-stage-1" class="stage-content active">
+      <p><i>Close your eyes. Can you find your way back through the sound of oil sizzling?</i></p>
+      <audio controls preload="none"><source src="assets/home-ambience.wav" type="audio/mpeg"></audio>
+    </div>
+    <div id="home-stage-2" class="stage-content">
+      <p><i>Before kitchens became sleek and silent, we stood barefoot on cold tiles, listening to the sizzle of garlic in oil. Someone washed vegetables in a red basin, while the rice cooker hissed like background music.</i></p>
+      <img data-src="assets/home-impression.gif" width="400" class="lazy-img">
+    </div>
+    <div id="home-stage-3" class="stage-content">
+      <p><i>November 2007</i></p>
+      <p><i>Back then at home, the off-key notes, the chipped piano stool, and my elder sister’s serious face filled the room with warmth. It wasn’t a perfect melody, but it was ours. Now, that sound lingers only in home videos and quiet memory.</i></p>
+      <video width="400" controls data-src="assets/home.mp4"  type="video/mp4"  class="lazy-video">
+    </div>
+    <div id="home-stage-4" class="stage-content"> 
+        Who decides when the sound of home becomes irrelevant?
+        The clumsy notes of our childhood piano, the hiss of the rice cooker, the rustle of slippers on tile — they used to fill every corner.
+        Now, we live oceans apart, and the house stays quiet most days.
+        <br>Did we grow up, or did home learn to forget us?
+    <hr>
+    <br>
+    <p><i>Leave your own memory here—anything you recall from this place: a thought, a feeling, a smell, a scene.</i></p>
+     <textarea placeholder="Leave your memory here" rows="4" style="width: 90%; margin-top: 10px;"></textarea>
+      <button onclick="saveComment('home')">Submit</button>
+
+    </div>
+  </div>
+
+  <div id="transportation-window" class="window">
+    <div class="title-bar">
+      <span>Transportation</span>
+      <button onclick="closeWindow('transportation')">X</button>
+    </div>
+    <div class="stage-buttons">
+      <button onclick="showStage('transportation', 1)" class="active">Ambience</button>
+      <button onclick="showStage('transportation', 2)">Impression</button>
+      <button onclick="showStage('transportation', 3)">Memory</button>
+      <button onclick="showStage('transportation', 4)">Fragment</button>
+    </div>
+    <div id="transportation-stage-1" class="stage-content active">
+      <p><i>Close your eyes. Do you hear coins clink, engines hum, and people taking?</i></p>
+      <audio controls preload="none"><source src="assets/bus-ambience.wav" type="audio/mpeg"></audio>
+    </div>
+    <div id="transportation-stage-2" class="stage-content">
+      <p><i>The seats were cracked, ad stickers peeling, and the driver tapped the steering wheel with a quiet rhythm. The bus arrived wrapped in dust and early morning light.</i></p>
+      <img data-src="assets/bus-impression.gif" width="400" class="lazy-img">
+    </div>
+    <div id="transportation-stage-3" class="stage-content">
+      <p><i> Spetember 2010</i></p>
+      <p><i>Back then in the car, I curled up with a cake box, lulled by the motion of the road and quiet conversations in the front seat. It wasn’t a special journey, but it felt safe. Now, that warmth only returns in sleep.</i></p>
+      <img data-src="assets/bus.jpg" width="400" class="lazy-img">
+    </div>
+    <div id="transportation-stage-4" class="stage-content">
+        Who decides when transit sounds become background noise?
+        Plastic seats, squeaky windows, the hum of engines and the crackle of radio — they once defined our way home.
+        Whether it was falling asleep on the backseat or squeezing coins into a bus slot, those sounds cradled our childhood.
+        Now, engines are quieter, routes smoother, but something feels missing.
+       <br>Did we arrive somewhere new, or did we leave something behind?
+    <hr>
+    <br>
+    <p><i>Leave your own memory here—anything you recall from this place: a thought, a feeling, a smell, a scene.</i></p>
+      <textarea placeholder="Leave your memory here" rows="4" style="width: 90%; margin-top: 10px;"></textarea>
+      <button onclick="saveComment('transportation')">Submit</button>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+  
+</body>
+</html>

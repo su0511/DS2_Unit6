@@ -1,0 +1,100 @@
+
+    body {
+      background: url('assets/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Tahoma', sans-serif;
+      margin: 0;
+      height: 100vh;
+    }
+
+    .desktop-icon {
+      position: absolute;
+      width: 80px;
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 1px black;
+      font-size: 12px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .desktop-icon img {
+      width: 60px;
+      height: 60px;
+      display: block;
+      margin: 0 auto 5px auto;
+    }
+
+    .window {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      width: 700px;
+      background: white;
+      border: 2px solid #000;
+      box-shadow: 5px 5px 5px gray;
+      display: none;
+      z-index: 100;
+      will-change: transform;
+    }
+
+    body.loading {
+      cursor: progress;
+    }
+
+    .title-bar {
+      background: rgb(0, 80, 160);
+      color: white;
+      padding: 5px 8px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: move;
+      user-select: none;
+    }
+
+    .title-bar button {
+      background: #FF3B3B;
+      color: white;
+      border: none;
+      padding: 2px 8px;
+      cursor: pointer;
+    }
+
+    .stage-buttons {
+      display: flex;
+      padding: 8px;
+      background: #ddd;
+      border-bottom: 1px solid #000;
+    }
+
+    .stage-buttons button {
+      flex: 1;
+      margin: 0 5px;
+      padding: 6px;
+      border: 1px solid #000;
+      background: #f0f0f0;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .stage-buttons button.active {
+      background: white;
+      font-weight: bold;
+    }
+
+    .stage-content {
+      display: none;
+      padding: 20px;
+    }
+
+    .stage-content.active {
+      display: block;
+    }
+
+    textarea {
+      resize: vertical;
+      width: 90%;
+    }
+    
