@@ -1,12 +1,18 @@
 let zIndexCounter = 100;
 
     function openWindow(id) {
-      const win = document.getElementById(id + "-window");
+      let win = document.getElementById(id + "-window");
       win.style.display = "block";
       win.style.zIndex = ++zIndexCounter;
-      showStage(id, 1);
-      lazyLoadMedia(id);
+      showStage(id, 1); // 可选
+      lazyLoadMedia(id); // 可选
     }
+
+    function closeWindow(id) {
+      const win = document.getElementById(id + "-window");
+      if (win) win.style.display = "none";
+    }
+
 
     function lazyLoadMedia(id) {
         let win = document.getElementById(id + "-window");
@@ -28,10 +34,6 @@ let zIndexCounter = 100;
         });
       }
       
-      function closeWindow(id) {
-        const win = document.getElementById(id + "-window"); 
-        if (win) win.style.display = "none";
-    }
       
 
     function showStage(id, num) {
@@ -98,7 +100,7 @@ let zIndexCounter = 100;
           });
         }
       
-        const win = document.getElementById("memory-wall");
+        const win = document.getElementById("memory-wall-window");
         win.style.display = "block";
         win.style.zIndex = ++zIndexCounter;
       }
