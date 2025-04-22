@@ -4,8 +4,8 @@ let zIndexCounter = 100;
       let win = document.getElementById(id + "-window");
       win.style.display = "block";
       win.style.zIndex = ++zIndexCounter;
-      showStage(id, 1); // 可选
-      lazyLoadMedia(id); // 可选
+      showStage(id, 1); 
+      lazyLoadMedia(id); 
     }
 
     function closeWindow(id) {
