@@ -40,17 +40,18 @@
         <img src="assets/icons08.png" alt="MemoryWall">
         Memories
       </div>
-
-      <div id="memory-window" class="window" style="display: none; top: 100px; left: 200px;">
+      
+      <div id="memory-wall-window" class="window" style="display: none; top: 100px; left: 200px;">
         <div class="title-bar">
-          <span>Memory Wall</span>
-          <button onclick="closeWindow('memory')">X</button>
+          <span>Memories</span>
+          <button onclick="closeWindow('memory-wall')">X</button>
         </div>
-        <div id="About-stage-1" class="stage-content active">
+        <div class="stage-content active">
           <p><b>All Saved Memories:</b></p>
           <ul id="memoryList" style="list-style-type: none; padding-left: 0;"></ul>
         </div>
       </div>
+      
 
       <div id="welcome-popup" class="window" style="width: 400px; top: 30%; left: 50%; transform: translateX(-50%); z-index: 9999;">
         <div class="title-bar">
@@ -106,7 +107,7 @@
       <img data-src="assets/mall-impression.gif" width="400" class="lazy-img">
     </div>
     <div id="mall-stage-3" class="stage-content">
-      <p><i>August 2028</i></p>
+      <p><i>August 2008</i></p>
       <p><i>My sister always took me on that spinning kiddie ride in the mall. We wobbled inside while a loud, funny tune played. That corner is now a Starbucks.</i></p>
       <img data-src="assets/mall.jpg" width="400" class="lazy-img">
     </div>
@@ -137,7 +138,7 @@
     <div id="school-stage-1" class="stage-content active">
       <p><i>Close your eyes. Can you return to the class just by listening?</i></p>
       <audio controls preload="none">
-      <source src="assets/school-ambience.wav" type="audio/mpeg">
+      <source src="assets/school-ambience.mp3" type="audio/mpeg">
       </audio>
     </div>
     <div id="school-stage-2" class="stage-content">
@@ -145,7 +146,7 @@
       <img data-src="assets/school-impression.gif" width="400" class="lazy-img">
     </div>
     <div id="school-stage-3" class="stage-content">
-        <p><i>October 2028</i></p>
+        <p><i>October 2008</i></p>
         <p><i>Back then in kindergarten, the red plaid uniforms, the morning broadcast — they all blend into a hazy but vivid childhood memory. Now, those sounds and scenes are slowly vanishing, living only in old photos.</i></p>
       <img data-src="assets/school.jpg" width="400" class="lazy-img">
       </div>
@@ -177,14 +178,14 @@
     </div>
     <div id="street-stage-1" class="stage-content active">
       <p><i>Close your eyes. The sound of a bike bell—are you back at that old intersection?</i></p>
-      <audio controls preload="none"><source src="assets/street-ambience.wav" type="audio/mpeg"></audio>
+      <audio controls preload="none"><source src="assets/street-ambience.mp3" type="audio/mpeg"></audio>
     </div>
     <div id="street-stage-2" class="stage-content">
       <p><i>I still remembers the heat of noon at the street crossing. Motorbikes buzzed like insects, plastic umbrellas bloomed above the heads. Noise, smell, and sweat — these were once the rhythms of a city.</i></p>
       <img data-src="assets/street-impression.gif" width="400" class="lazy-img">
     </div>
     <div id="street-stage-3" class="stage-content">
-      <p><i>June 2027</i></p>
+      <p><i>June 2007</i></p>
       <p><i>My dad lifted me up high by the pond, and we both turned toward the sound of a motorcycle rushing past. That brief second, the hum of engines, sun on the water, my tiny sandals swinging — became a still frame in my memory. Now, the street feels quieter, not because the noise is gone, but because we've grown apart from it. </i></p>
       <video width="400" controls data-src="assets/street.mp4"  type="video/mp4"  class="lazy-video">
       </video>
@@ -217,7 +218,7 @@
     </div>
     <div id="park-stage-1" class="stage-content active">
       <p><i>Close your eyes. Can the crunch of an apple bring you back to the park bench?</i></p>
-      <audio controls preload="none"><source src="assets/park-ambience.wav" type="audio/mpeg"></audio>
+      <audio controls preload="none"><source src="assets/park-ambience.mp3" type="audio/mpeg"></audio>
     </div>
     <div id="park-stage-2" class="stage-content">
       <p><i>Before playgrounds became gated zones or vanished into blueprints, we chased shadows and splashed water with bare feet. Someone’s grandma peeled fruit on a bench, and laughter echoed between trees.</i></p>
@@ -255,7 +256,7 @@
     </div>
     <div id="home-stage-1" class="stage-content active">
       <p><i>Close your eyes. Can you find your way back through the sound of oil sizzling?</i></p>
-      <audio controls preload="none"><source src="assets/home-ambience.wav" type="audio/mpeg"></audio>
+      <audio controls preload="none"><source src="assets/home-ambience.mp3" type="audio/mpeg"></audio>
     </div>
     <div id="home-stage-2" class="stage-content">
       <p><i>Before kitchens became sleek and silent, we stood barefoot on cold tiles, listening to the sizzle of garlic in oil. Someone washed vegetables in a red basin, while the rice cooker hissed like background music.</i></p>
@@ -293,7 +294,7 @@
     </div>
     <div id="transportation-stage-1" class="stage-content active">
       <p><i>Close your eyes. Do you hear coins clink, engines hum, and people taking?</i></p>
-      <audio controls preload="none"><source src="assets/bus-ambience.wav" type="audio/mpeg"></audio>
+      <audio controls preload="none"><source src="assets/bus-ambience.mp3" type="audio/mpeg"></audio>
     </div>
     <div id="transportation-stage-2" class="stage-content">
       <p><i>The seats were cracked, ad stickers peeling, and the driver tapped the steering wheel with a quiet rhythm. The bus arrived wrapped in dust and early morning light.</i></p>

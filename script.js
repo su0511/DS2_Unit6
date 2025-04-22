@@ -1,12 +1,18 @@
 let zIndexCounter = 100;
 
     function openWindow(id) {
-      const win = document.getElementById(id + "-window");
+      let win = document.getElementById(id + "-window");
       win.style.display = "block";
       win.style.zIndex = ++zIndexCounter;
-      showStage(id, 1);
-      lazyLoadMedia(id);
+      showStage(id, 1); // 可选
+      lazyLoadMedia(id); // 可选
     }
+
+    function closeWindow(id) {
+      const win = document.getElementById(id + "-window");
+      if (win) win.style.display = "none";
+    }
+
 
     function lazyLoadMedia(id) {
         let win = document.getElementById(id + "-window");
@@ -28,10 +34,6 @@ let zIndexCounter = 100;
         });
       }
       
-      function closeWindow(id) {
-        const win = document.getElementById(id + "-window"); 
-        if (win) win.style.display = "none";
-    }
       
 
     function showStage(id, num) {
@@ -98,7 +100,7 @@ let zIndexCounter = 100;
           });
         }
       
-        const win = document.getElementById("memory-wall");
+        const win = document.getElementById("memory-wall-window");
         win.style.display = "block";
         win.style.zIndex = ++zIndexCounter;
       }
@@ -136,25 +138,41 @@ let zIndexCounter = 100;
       dragTarget = null;
     });
     
-    document.body.classList.add("loading"); // 页面一开始添加 loading 样式
+    document.body.classList.add("loading"); 
 
     window.addEventListener("load", function () {
-    document.body.classList.remove("loading"); // 页面加载完去掉
+    document.body.classList.remove("loading"); 
     });
 
+    document.addEventListener("DOMContentLoaded", function() {
+      const lazyImgs = document.querySelectorAll('.lazy-img');
+      const lazyVideos = document.querySelectorAll('.lazy-video');
+    
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.getAttribute('data-src');
+            observer.unobserve(img);
+          }
+        });
+      }, { threshold: 0.1 });
+    
+      lazyImgs.forEach(img => observer.observe(img));
+    
+  
+      lazyVideos.forEach(video => {
+        observer.observe(video);
+      });
+    });
+    
     function openWindow(id) {
-        document.body.classList.add("loading");
-        setTimeout(() => {
-          const win = document.getElementById(id + "-window");
-          win.style.display = "block";
-          win.style.zIndex = ++zIndexCounter;
-          showStage(id, 1);
-          lazyLoadMedia(id);
-          document.body.classList.remove("loading");
-        }, 300); 
-      }
-      
-   
+      const win = document.getElementById(id + "-window");
+      win.style.display = "block";
+      win.style.zIndex = ++zIndexCounter;
+      showStage(id, 1);
+      lazyLoadMedia(id);
+    }
 
       localStorage.clear()
 

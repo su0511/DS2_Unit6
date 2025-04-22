@@ -35,11 +35,11 @@
       box-shadow: 5px 5px 5px gray;
       display: none;
       z-index: 100;
-      will-change: transform;
+      will-change: opacity, transform;
     }
 
     body.loading {
-      cursor: progress;
+      cursor: progress !important;
     }
 
     .title-bar {
